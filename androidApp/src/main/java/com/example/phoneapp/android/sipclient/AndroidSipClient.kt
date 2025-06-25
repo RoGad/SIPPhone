@@ -1,18 +1,17 @@
+// androidApp/src/main/java/com/example/phoneapp/android/sipclient/AndroidSipClient.kt
 package com.example.phoneapp.android.sipclient
 
 import android.content.Context
+import com.example.phoneapp.data.CallState
+import com.example.phoneapp.data.SipAccount
 import com.example.phoneapp.sipclient.SipClient
 
-class AndroidSipClient(private val context: Context): SipClient {
+class AndroidSipClient(private val context: Context) : SipClient {
     override fun initialize() {
         TODO("Not yet implemented")
     }
 
-    override fun createAccount(
-        username: String,
-        password: String,
-        domain: String
-    ) {
+    override fun createAccount(account: SipAccount) {
         TODO("Not yet implemented")
     }
 
@@ -29,6 +28,10 @@ class AndroidSipClient(private val context: Context): SipClient {
     }
 
     override fun hangup() {
+        TODO("Not yet implemented")
+    }
+
+    override fun setCallStateListener(listener: (CallState) -> Unit) {
         TODO("Not yet implemented")
     }
 
