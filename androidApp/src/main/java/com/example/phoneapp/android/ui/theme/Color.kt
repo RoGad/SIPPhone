@@ -1,2 +1,2 @@
-package com.example.phoneapp.android.ui.color
+package com.example.phoneapp.android.ui.theme
 

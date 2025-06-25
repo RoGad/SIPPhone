@@ -12,4 +12,6 @@ interface SipClient {
     fun answerCall()
     fun hangup()
     fun setCallStateListener(listener: (CallState) -> Unit)
+    fun unregister()
+    fun delete()
 }
