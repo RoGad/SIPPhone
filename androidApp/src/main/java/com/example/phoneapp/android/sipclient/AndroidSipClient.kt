@@ -54,28 +54,18 @@ class AndroidSipClient(private val context: Context) : SipClient {
                     message: String
                 ) {
                     val status = when (state){
-                        Call.State.OutgoingInit -> CallStatus.OUTGOING
-                        Call.State.Idle -> CallStatus.IDLE
                         Call.State.IncomingReceived -> CallStatus.INCOMING
+                        Call.State.OutgoingInit -> CallStatus.OUTGOING
                         Call.State.OutgoingProgress -> CallStatus.OUTGOING
                         Call.State.OutgoingRinging -> CallStatus.OUTGOING
                         Call.State.OutgoingEarlyMedia -> CallStatus.OUTGOING
                         Call.State.Connected -> CallStatus.CONNECTED
+                        Call.State.StreamsRunning -> CallStatus.CONNECTED
+                        Call.State.IncomingEarlyMedia -> CallStatus.CONNECTED
                         Call.State.Pausing -> CallStatus.PAUSED
                         Call.State.Paused -> CallStatus.PAUSED
-                        Call.State.StreamsRunning -> CallStatus.CONNECTED
                         Call.State.Error -> CallStatus.ERROR
-                        Call.State.IncomingEarlyMedia -> CallStatus.CONNECTED
-                        Call.State.PushIncomingReceived -> TODO()
-                        Call.State.Resuming -> TODO()
-                        Call.State.Referred -> TODO()
-                        Call.State.End -> TODO()
-                        Call.State.PausedByRemote -> TODO()
-                        Call.State.UpdatedByRemote -> TODO()
-                        Call.State.Updating -> TODO()
-                        Call.State.Released -> TODO()
-                        Call.State.EarlyUpdatedByRemote -> TODO()
-                        Call.State.EarlyUpdating -> TODO()
+                        Call.State.Idle -> CallStatus.IDLE
                         else -> CallStatus.IDLE
                     }
                     val cs = CallState(
