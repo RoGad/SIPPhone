@@ -30,6 +30,7 @@ kotlin {
             baseName = "shared"
             isStatic = true
         }
+        extra
     }
     
     sourceSets {

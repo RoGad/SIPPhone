@@ -1,7 +1,7 @@
 platform :ios, '16.0'
-use_frameworks!
+source "https://gitlab.linphone.org/BC/public/podspec.git"
 
 target 'iosApp' do
-  pod 'shared', :path => '../shared'
-  pod 'linphone-sdk', '~> 5.4.0'  
+  use_frameworks!
+  pod 'linphone-sdk' , '~>5.5.0'
 end
