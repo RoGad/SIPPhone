@@ -1,4 +1,4 @@
-package com.example.phoneapp.android.ui
+package com.example.phoneapp.ui.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -11,10 +11,14 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.phoneapp.data.CallState
-import com.example.phoneapp.data.CallStatus
+import com.example.phoneapp.generated.resources.Res
+import com.example.phoneapp.generated.resources.answer_call
+import com.example.phoneapp.generated.resources.call
+import com.example.phoneapp.generated.resources.demo_call
+import com.example.phoneapp.generated.resources.hang_up
+import org.jetbrains.compose.resources.stringResource
 
 @Composable
 fun MainScreen(
@@ -31,11 +35,10 @@ fun MainScreen(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            text = "SIP Call Demo",
+            text = stringResource(Res.string.demo_call),
             style = MaterialTheme.typography.headlineSmall,
             modifier = Modifier.padding(bottom = 24.dp)
         )
-
         if (callState != null) {
             Text("Status: ${callState.status}")
             Text("Remote: ${callState.remoteAddress ?: "-"}")
@@ -51,7 +54,7 @@ fun MainScreen(
                 .fillMaxWidth()
                 .padding(vertical = 4.dp)
         ) {
-            Text("Call")
+            Text( text = stringResource(Res.string.call) )
         }
 
         Button(
@@ -60,7 +63,7 @@ fun MainScreen(
                 .fillMaxWidth()
                 .padding(vertical = 4.dp)
         ) {
-            Text("Hang Up")
+            Text( text = stringResource(Res.string.hang_up) )
         }
 
         Button(
@@ -69,23 +72,7 @@ fun MainScreen(
                 .fillMaxWidth()
                 .padding(vertical = 4.dp)
         ) {
-            Text("Answer Call")
+            Text( text = stringResource(Res.string.answer_call) )
         }
     }
-}
-
-@Composable
-@Preview(showBackground = true)
-fun MainScreenPreview(){
-    MainScreen(
-        callState = CallState(
-            status = CallStatus.CONNECTED,
-            remoteAddress = "sip:echo@sip.linphone.org",
-            isActive = true,
-            duration = 42
-        ),
-        onCall = {},
-        onHangup = {},
-        answerCall = {}
-    )
 }

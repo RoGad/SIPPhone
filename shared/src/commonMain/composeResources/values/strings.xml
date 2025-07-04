@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    <string name="demo_call">Demo Call</string>
+    <string name="no_call_yet">No call yet</string>
+    <string name="call">Call</string>
+    <string name="hang_up">Hang Up</string>
+    <string name="answer_call">Answer Call</string>
+</resources>

@@ -6,7 +6,7 @@ import com.example.phoneapp.data.SipAccount
 
 interface SipClient {
     fun initialize()
-    fun createAccount(account: SipAccount)
+    fun createAccount(account: SipAccount, fcmToken: String)
     fun register()
     fun makeCall(address: String)
     fun answerCall()

@@ -1,9 +1,11 @@
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
 pluginManagement {
     repositories {
         google()
         gradlePluginPortal()
         mavenCentral()
+        maven { setUrl("https://maven.pkg.jetbrains.space/public/p/compose/dev") }
     }
 }
 
@@ -18,6 +20,7 @@ dependencyResolutionManagement {
                 includeGroup("org.linphone")
             }
         }
+        maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
     }
 }
 
