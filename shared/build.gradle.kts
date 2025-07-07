@@ -4,6 +4,8 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.kotlinCocoapods)
     alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.jetbrainsCompose)
+    alias(libs.plugins.compose.compiler)
 }
 
 kotlin {
@@ -30,25 +32,43 @@ kotlin {
             baseName = "shared"
             isStatic = true
         }
-        extra
+
     }
-    
+
     sourceSets {
         commonMain.dependencies {
-            implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
-            implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
+            implementation(libs.kotlinx.coroutines.core)
+
+            implementation(compose.runtime)
+            implementation(compose.foundation)
+            implementation(compose.ui)
+            implementation(compose.animation)
+            implementation(compose.components.resources)
+            implementation(compose.material3)
+
+            implementation(libs.ktor.client.core)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
         }
+        iosMain.dependencies {
+            implementation(libs.ktor.client.darwin)
+        }
     }
+}
+
+
+compose.resources {
+    publicResClass = false
+    packageOfResClass = "com.example.phoneapp.generated.resources"
+    generateResClass = auto
 }
 
 android {
     namespace = "com.example.phoneapp"
     compileSdk = 35
     defaultConfig {
-        minSdk = 24
+        minSdk = 29
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8

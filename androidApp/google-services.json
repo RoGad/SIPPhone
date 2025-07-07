@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "745244945185",
+    "project_id": "sipphone-49201",
+    "storage_bucket": "sipphone-49201.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:745244945185:android:272fe7f955557d97022c60",
+        "android_client_info": {
+          "package_name": "com.example.phoneapp.android"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGu5HNX1-w2dj-J8FcbxIbv7H6rzkCjtY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

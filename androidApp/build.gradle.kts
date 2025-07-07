@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
+    alias(libs.plugins.google.gms.google.services)
+    alias(libs.plugins.jetbrainsCompose)
     alias(libs.plugins.compose.compiler)
 }
 
@@ -9,7 +11,7 @@ android {
     compileSdk = 35
     defaultConfig {
         applicationId = "com.example.phoneapp.android"
-        minSdk = 24
+        minSdk = 29
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -42,9 +44,17 @@ dependencies {
     implementation(libs.compose.ui.tooling.preview)
     implementation(libs.compose.material3)
     implementation(libs.androidx.activity.compose)
+    implementation(platform("com.google.firebase:firebase-bom:33.16.0"))
+    implementation(libs.firebase.messaging)
     debugImplementation(libs.compose.ui.tooling)
+    implementation("com.google.firebase:firebase-analytics")
+    implementation("androidx.localbroadcastmanager:localbroadcastmanager:1.1.0")
 
     implementation(libs.linphone)
+
+    implementation(libs.ktor.client.okhttp)
+
+    implementation(libs.kotlinx.coroutines.android)
 }
 
 
